@@ -29,7 +29,7 @@ sampledSignal = DiscreteSignal 7 $ map signal [0,7..400]
 resampledSignal :: SignalFunc
 resampledSignal = resample sampledSignal
 
-main = toFile def "example_resample.svg" $ do
+main = toFile def "fig/example_resample.svg" $ do
   layout_title .= "Resample Signal"
   setColors [opaque blue, opaque red]
   plot (line "Signal" [(map (\x -> (x,resampledSignal x)) [0,(0.5)..400])])
@@ -38,7 +38,7 @@ main = toFile def "example_resample.svg" $ do
     DiscreteSignal _ samples = sampledSignal
 
 
--------------
+---- Sinc Function ----
 epsilon :: RealFloat a => a
 epsilon = encodeFloat 1 (fromIntegral $ 1-floatDigits epsilon)
 
