@@ -22,7 +22,6 @@ resample signal =
      signalFunc t = sum $ zipWith (*) samples (bases t)
      bases t = [sinc $ (t - n*ts)/ts | n <- [0..]]
 
-
 sampledSignal :: DiscreteSignal
 sampledSignal = DiscreteSignal 7 $ map signal [0,7..400]
 
@@ -32,7 +31,8 @@ resampledSignal = resample sampledSignal
 main = toFile def "fig/example_resample.svg" $ do
   layout_title .= "Resample Signal"
   setColors [opaque blue, opaque red]
-  plot (line "Signal" [(map (\x -> (x,resampledSignal x)) [0,(0.5)..400])])
+  -- plot (line "Sinc" [])
+  plot (line "Signal" [(map (\x -> (x, resampledSignal x)) [0,(0.5)..400])])
   plot (points "Discrete Time" (zip [0,7..400] samples))
   where
     DiscreteSignal _ samples = sampledSignal
@@ -45,7 +45,7 @@ epsilon = encodeFloat 1 (fromIntegral $ 1-floatDigits epsilon)
 sinc :: (RealFloat a) => a -> a
 sinc x =
   if abs x >= taylor_n_bound
-    then sin x / x
+    then sin (pi * x) / (pi * x)
     else 1 - x^2/6 + x^4/120
  where
   taylor_n_bound = sqrt $ sqrt epsilon
