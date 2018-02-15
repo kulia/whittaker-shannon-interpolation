@@ -8,4 +8,4 @@ An example of the resampling is shown in the figure below.
 
 ![](fig/example_resample.svg "Results")
 
-The software was made by Aleksander Wasaznik and Geir Kulia.
+The software was made by ![Aleksander Wasaznik](https://github.com/aleksanw) and ![Geir Kulia](https://github.com/kulia/).
