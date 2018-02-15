@@ -8,4 +8,4 @@ Check out the [wikipedia](https://en.wikipedia.org/wiki/Whittaker%E2%80%93Shanno
 
 ![](fig/example_resample.svg "Results")
 
-The software was made by [Aleksander Wasaznik](https://github.com/aleksanw) and [Geir Kulia](https://github.com/kulia/).
+The software is made by [Aleksander Wasaznik](https://github.com/aleksanw) and [Geir Kulia](https://github.com/kulia/).
